@@ -23,6 +23,9 @@ Route::middleware('auth:sanctum')->group(function () {
         //user route
             Route::get('/users', 'getUsers');
 
+            Route::post('/send-message', 'sendMessage');
+
+    Route::get('/messages/{id}', 'getMessages');
 
         });
 
