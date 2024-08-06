@@ -17,7 +17,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|unique:users,email',
             'phone' => 'required|unique:users,phone',
-            'password' => 'required|min:6',
+            'password' => 'required|min:8',
             'profile_image' => 'required|image',
             'date_of_birth' => 'required',
         ]);
@@ -44,7 +44,7 @@ class UserController extends Controller
     {
         $request->validate([
             'email' => 'required|exists:users,email',
-            'password' => 'required|min:6',
+            'password' => 'required|min:8',
         ]);
 
         if (Auth::attempt($request->only('email', 'password'))) {
